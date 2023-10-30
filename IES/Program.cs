@@ -3,15 +3,6 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAnyOrigin", corsPolicyBuilder =>
-    {
-        corsPolicyBuilder.AllowAnyOrigin()
-               .AllowAnyMethod()
-               .AllowAnyHeader();
-    });
-});
 
 WebApplication app = builder.Build();
 
