@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>@ViewData["Title"] - IES</title>
+        <link rel="icon" type="image/x-icon" href="img/ies.png">
+
+        @* Bootstrap CSS *@
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+
+        @* Custom CSS *@
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.worker.min.js"></script>
+
+        @await RenderSectionAsync("css", false)
+
+    </head>
+    <body class="d-flex flex-column min-vh-100 justify-content-between">
+        <header class="px-1 d-flex justify-content-center align-items-center w-100 bg-white header">
+            <div class="container d-flex flex-row justify-content-between align-items-center">
+                <img src="~/img/ies.png" alt="Logo">
+                <div class="d-flex">
+                    <a class="mx-2 p-0 fs-5 fw-semibold text-decoration-none nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                    <a class="mx-2 p-0 fs-5 fw-semibold text-decoration-none nav-link" href="https://ies-corporate.com/contact9.html">Contact</a>
+                </div>
+            </div>
+        </header>
+        <div class="px-1 container">
+
+            @RenderBody()
+
+        </div>
+        <footer class="px-1 d-flex justify-content-center align-items-center w-100 footer">
+            <div class="container">
+                <small class="small">Copyright © @DateTime.Now.Year - IES Holdings Inc. All rights reserved <a class="link text-white text-decoration-none" href="https://ies-corporate.com/privacy/">Privacy Policy and Terms of Use</a></small>
+            </div>
+        </footer>
+
+        @* Bootstrap JS *@
+        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        @* Custom JS *@
+        <script src="~/js/site.js" asp-append-version="true"></script>
+
+        @await RenderSectionAsync("script", false)
+    </body>
+</html>
