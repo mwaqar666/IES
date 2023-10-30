@@ -12,37 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.map" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\LICENSE.txt" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\dx.light.css" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\fonts\Roboto-300.ttf" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\fonts\Roboto-300.woff" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\fonts\Roboto-300.woff2" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\fonts\Roboto-400.ttf" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\fonts\Roboto-400.woff" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\fonts\Roboto-400.woff2" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\fonts\Roboto-500.ttf" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\fonts\Roboto-500.woff" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\fonts\Roboto-500.woff2" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\fonts\Roboto-700.ttf" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\fonts\Roboto-700.woff" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\fonts\Roboto-700.woff2" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\icons\dxicons.ttf" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\icons\dxicons.woff" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\icons\dxicons.woff2" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\icons\dxiconsmaterial.ttf" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\icons\dxiconsmaterial.woff" />
-      <_ContentIncludedByDefault Remove="wwwroot\css\devextreme\icons\dxiconsmaterial.woff2" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="DevExtreme.AspNet.Core" Version="23.1.5" />
-      <PackageReference Include="DevExtreme.AspNet.Data" Version="3.0.0" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 

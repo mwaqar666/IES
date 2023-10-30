@@ -6,73 +6,44 @@
         <title>@ViewData["Title"] - IES</title>
         <link rel="icon" type="image/x-icon" href="img/ies.png">
 
-        @* DevExpress HTML Editor *@
-        <script src="https://unpkg.com/devextreme-quill/dist/dx-quill.min.js"></script>
-
-        @* DevExpress CSS *@
-        <link href="~/css/devextreme/dx.light.css" rel="stylesheet" />
-
         @* Bootstrap CSS *@
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
 
         @* Custom CSS *@
         <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
 
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.worker.min.js"></script>
+
         @await RenderSectionAsync("css", false)
 
-        @* DevExpress JQuery *@
-        <script src="~/js/devextreme/jquery.js"></script>
+    </head>
+    <body class="d-flex flex-column min-vh-100 justify-content-between">
+        <header class="px-1 d-flex justify-content-center align-items-center w-100 bg-white header">
+            <div class="container d-flex flex-row justify-content-between align-items-center">
+                <img src="~/img/ies.png" alt="Logo">
+                <div class="d-flex">
+                    <a class="mx-2 p-0 fs-5 fw-semibold text-decoration-none nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                    <a class="mx-2 p-0 fs-5 fw-semibold text-decoration-none nav-link" href="https://ies-corporate.com/contact9.html">Contact</a>
+                </div>
+            </div>
+        </header>
+        <div class="px-1 container">
 
-        @* DevExpress Localization *@
-        <script src="~/js/devextreme/cldr.js"></script>
-        <script src="~/js/devextreme/cldr/event.js"></script>
-        <script src="~/js/devextreme/cldr/supplemental.js"></script>
-        <script src="~/js/devextreme/cldr/unresolved.js"></script>
-        <script src="~/js/devextreme/globalize.js"></script>
-        <script src="~/js/devextreme/globalize/message.js"></script>
-        <script src="~/js/devextreme/globalize/number.js"></script>
-        <script src="~/js/devextreme/globalize/currency.js"></script>
-        <script src="~/js/devextreme/globalize/date.js"></script>
+            @RenderBody()
 
-        @* DevExpress Client Side Export *@
-        <script src="~/js/devextreme/jszip.js"></script>
-
-        @* DevExpress JS *@
-        <script src="~/js/devextreme/dx.all.js"></script>
-        <script src="~/js/devextreme/dx.aspnet.mvc.js"></script>
-        <script src="~/js/devextreme/dx.aspnet.data.js"></script>
+        </div>
+        <footer class="px-1 d-flex justify-content-center align-items-center w-100 footer">
+            <div class="container">
+                <small class="small">Copyright © @DateTime.Now.Year - IES Holdings Inc. All rights reserved <a class="link text-white text-decoration-none" href="https://ies-corporate.com/privacy/">Privacy Policy and Terms of Use</a></small>
+            </div>
+        </footer>
 
         @* Bootstrap JS *@
         <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 
         @* Custom JS *@
         <script src="~/js/site.js" asp-append-version="true"></script>
-        </head>
-    <body class="body overflow-y-hidden">
-        <header class="d-flex justify-content-center align-items-center header">
-            <nav class="container d-flex justify-content-between align-items-center px-2 navbar navbar-expand-lg">
-                <img src="~/img/ies.png" alt="Logo">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="mx-2 p-0 fs-5 fw-semibold nav-link" asp-controller="Home" asp-action="Index">Home</a>
-                        <a class="mx-2 p-0 fs-5 fw-semibold nav-link" href="https://ies-corporate.com/contact9.html">Contact</a>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <div class="container vh-100">
-
-            @RenderBody()
-
-        </div>
-        <footer class="d-flex justify-content-center align-items-center w-100 footer">
-            <div class="container">
-                <small class="small">Copyright © @DateTime.Now.Year - IES Holdings Inc. All rights reserved <a class="link" href="https://ies-corporate.com/privacy/">Privacy Policy and Terms of Use</a></small>
-            </div>
-        </footer>
 
         @await RenderSectionAsync("script", false)
     </body>

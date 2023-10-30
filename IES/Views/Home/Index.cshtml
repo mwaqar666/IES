@@ -1,37 +1,65 @@
-﻿@using Microsoft.AspNetCore.Html
 @model HomeView
 @{
     ViewData["Title"] = "Home";
-    IHtmlContent? documents = Html.Raw(JsonConvert.SerializeObject(Model.Documents));
 }
 
 @section css
+
 {
-    <style>
-        .product-item a {
-            color: #333333;
-            text-decoration: blink;
-        }
-    </style>
+	<link rel="stylesheet" href="~/css/index.css" asp-append-version="true">
+	<script src="~/js/index.js" asp-append-version="true"></script>
 }
 
 <div class="d-flex flex-column w-100 mt-5">
-    <h1 class="display-5 fw-normal mb-3">@Model.Title</h1>
-    <p class="mb-1">@Model.Description</p>
+	<h1 class="display-5 fw-normal mb-3">@Model.Title</h1>
+	<p class="mb-1">@Model.Description</p>
+	<div class="my-5 row">
+		@for (int index = 0; index < Model.Documents.Count; index++)
+		{
+			Document document = Model.Documents[index];
 
-    <div class="py-3">
-        @(Html.DevExtreme().List()
-            .DataSource(Model.Documents)
-            .DisplayExpr("DocumentName")
-            .OnItemClick("onItemClick"))
-    </div>
+			<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 rounded-2 pdf-box pdf-container-@index">
+				<div class="p-1 cursor-pointer d-flex flex-column row-gap-1" onclick="navigateToPdfUrl('@document.DocumentLink')">
+					<div class="loader-container d-flex justify-content-center align-items-center">
+						<div class="rounded-circle loader"></div>
+					</div>
+					<div class="d-flex pdf-details">
+						<div class="pdf-icon">
+							<img class="img-fluid" src="~/img/pdf.png" alt="PDF Icon"/>
+						</div>
+						<div class="d-flex flex-column pdf-details-content justify-content-between">
+							<p class="fw-semibold pdf-txt text-black overflow-hidden truncated-text">@document.DocumentName</p>
+							<div class="d-flex flex-row column-gap-1 pdf-info">
+								<p class="pdf-txt text-black page-info">Pending</p>
+								<p class="pdf-txt text-black">.</p>
+								<p class="pdf-txt text-black pdf-size-info">Pending</p>
+								<p class="pdf-txt text-black">.</p>
+								<p class="pdf-txt text-black">PDF</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<script>
+					(function () {
+
+					    const pdfContainer = document.querySelector('.pdf-container-@index');
+					    const pdfUrl = '@document.DocumentLink';
+
+					    // Initialize PDF.js
+					    const pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+						const canvas = document.createElement('canvas');
+
+					    // Load and render the PDF
+					    pdfjsLib.getDocument(pdfUrl).promise
+					        .then((document) => getPage(pdfContainer, document))
+					        .then((page) => renderPage(canvas, page))
+					        .then(() => renderSize(canvas, pdfContainer, pdfUrl))
+					        .catch((error) => catchError(pdfContainer, error));
+					})();
+				</script>
+			</div>
+		}
+	</div>
 </div>
-
-@section script
-{
-    <script>
-        const onItemClick = ({ itemData }) => {
-            window.open(itemData.DocumentLink, '_blank');
-        };
-    </script>
-}

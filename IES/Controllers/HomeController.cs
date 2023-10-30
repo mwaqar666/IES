@@ -17,7 +17,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        DocumentJson documentJson = ReadDocuments();
+        DocumentJson documentJson = ReadDocuments("dev");
 
         HomeView homeView = new() {
             Title = documentJson.Title,
@@ -34,11 +34,11 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
-    private DocumentJson ReadDocuments()
+    private DocumentJson ReadDocuments(string mode = "prod")
     {
         string rootPath = _hostEnvironment.ContentRootPath;
 
-        string fullPath = Path.Combine(rootPath, "wwwroot/json/documents.json");
+        string fullPath = Path.Combine(rootPath, $"wwwroot/json/documents.{mode}.json");
 
         string jsonData = System.IO.File.ReadAllText(fullPath);
 

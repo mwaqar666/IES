@@ -1,0 +1,27 @@
+﻿{
+  "Title": "IES Annual Meeting Documents",
+  "Description": "The following documents are available for viewing and printing related to the IES Holdings, Inc. 2023 Annual Meeting:",
+  "Documents": [
+    {
+      "DocumentName": "Sample PDF 1",
+      "DocumentLink": "https://getsamplefiles.com/download/pdf/sample-1.pdf"
+    },
+    {
+      "DocumentName": "Sample PDF 2",
+      "DocumentLink": "https://getsamplefiles.com/download/pdf/sample-2.pdf"
+    },
+    {
+      "DocumentName": "Sample PDF 3",
+      "DocumentLink": "https://getsamplefiles.com/download/pdf/sample-3.pdf"
+    },
+    {
+      "DocumentName": "Sample PDF 4",
+      "DocumentLink": "https://getsamplefiles.com/download/pdf/sample-4.pdf"
+    },
+    {
+      "DocumentName": "Sample PDF 5",
+      "DocumentLink": "https://getsamplefiles.com/download/pdf/sample-5.pdf"
+    }
+  ]
+}
+

@@ -1,4 +1,9 @@
-html {
+* {
+    --bs-gutter-x: 0 !important;
+    --bs-gutter-y: 0 !important;
+}
+
+html, body {
     font-size: 14px;
     background: #EFEEEF;
 }
@@ -14,30 +19,17 @@ p, h1, h2, h3, h4, h5, h6, small, span {
     }
 }
 
-.body {
-    background: #EFEEEF;
-}
-
 .header {
     min-height: 10rem;
-    background: #FFFFFF;
 }
 
 .nav-link {
-    text-decoration: none;
-    color: #999999;;
+    color: #999999;
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
     min-height: 5rem;
     background: #E2E2E2;
-}
-
-.link {
-    color: #000000;
-    text-decoration: none;
 }
 
 .link:hover {
