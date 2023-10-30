@@ -1,0 +1,90 @@
+﻿* {
+    --pdf-detail-gap: 5%;
+    --pdf-icon-width: 3rem;
+}
+
+.row {
+    gap: 1rem;
+}
+
+.object-position-top {
+    object-position: top;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.pdf-box {
+    border: 1px solid #315b6f6b;
+    background: #315b6f6b;
+    box-shadow: 0 4px 8px 0 #62718B14, 0 1px 2px 0 #62718B33;
+}
+
+@media (min-width: 1200px) {
+    .pdf-box {
+        width: calc((100% / 4) - (3rem / 4));
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .pdf-box {
+        width: calc((100% / 3) - (2rem / 3));
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .pdf-box {
+        width: calc((100% / 2) - (1rem / 2));
+    }
+}
+
+.pdf-icon {
+    width: var(--pdf-icon-width);
+}
+
+.pdf-details {
+    column-gap: var(--pdf-detail-gap);
+}
+
+.pdf-details-content {
+    width: calc(100% - var(--pdf-detail-gap) - var(--pdf-icon-width));
+}
+
+.pdf-txt {
+    font-size: 0.875rem;
+}
+
+.aspect-ratio-16x9 {
+    aspect-ratio: 16 / 9;
+}
+
+.pdf-hover {
+    transition: transform .5s ease;
+}
+
+.pdf-hover:hover {
+    transform: scale(1.1);
+}
+
+.truncated-text {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.loader-container {
+    height: 10rem;
+}
+
+.loader {
+    border: 0.2rem solid #f3f3f3;
+    border-top: 0.2rem solid #315b6f6b;
+    width: 4rem;
+    height: 4rem;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
