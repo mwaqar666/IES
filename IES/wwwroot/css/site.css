@@ -32,6 +32,12 @@ p, h1, h2, h3, h4, h5, h6, small, span {
     background: #E2E2E2;
 }
 
+.link {
+    color: #000000;
+}
+
 .link:hover {
-    background: #C7D1D6;
+    background: #315B6F;
+    color: #FFFFFF;
+    transition: background-color 0.5s, color 0.5s;
 }

@@ -1,6 +1,6 @@
 ﻿* {
     --pdf-detail-gap: 5%;
-    --pdf-icon-width: 3rem;
+    --pdf-icon-width: 2rem;
 }
 
 .row {
@@ -17,8 +17,18 @@
 
 .pdf-box {
     border: 1px solid #315b6f6b;
-    background: #315b6f6b;
+    background: #E2E2E2;
     box-shadow: 0 4px 8px 0 #62718B14, 0 1px 2px 0 #62718B33;
+}
+
+.pdf-box:hover {
+    color: #E2E2E2;
+    background: #315B6F;
+    transition: background-color 0.5s, color;
+    -o-transition: background-color 0.5s, color;
+    -ms-transition: background-color 0.5s, color;
+    -moz-transition: background-color 0.5s, color;
+    -webkit-transition: background-color 0.5s, color;
 }
 
 @media (min-width: 1200px) {
@@ -40,6 +50,7 @@
 }
 
 .pdf-icon {
+    transform: scale(0.75);
     width: var(--pdf-icon-width);
 }
 
